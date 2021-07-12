@@ -1,0 +1,27 @@
+// WAP to llustrate pointers in swapping two numbers.
+#include<stdio.h>
+
+int swap( int *a , int *b);
+static int main()
+{
+    int p,q;
+    printf("Enter a : ");
+    scanf("%d", &p);
+    printf("Enter b : ");
+    scanf("%d", &q);
+    printf("\nBefore swapping the numbers :\n a = %d\n b = %d\n",p,q);
+    swap(&p,&q);
+    return 0;
+}
+
+//Function Call by Reference
+int swap (int *a  , int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("\nAfter swapping the numbers :\n a = %d\n ", *a);
+    printf("b = %d", *b);
+
+}
