@@ -1,0 +1,65 @@
+/*Develop a C program to read and print three book details
+(i.e. Book Title, Author, Price, number of pages, date of publication).
+ Also print the Book details with the highest price.*/
+#include <stdio.h>
+
+typedef struct book
+{
+    char book_title[20];
+    char author[20];
+    int pages;
+    float price;
+    char yr_of_publication[10];
+}s;
+
+static int main()
+{
+    struct  book s[3];
+    printf("**********************Book details************************\n");
+    for(int i=0;i<3;i++)
+    {
+        printf("\n\t*********Book %d details*******\n",i+1);
+        printf("\nTitle of the book :");
+        scanf("%s",s[i].book_title);
+        fflush(stdin);
+        printf("Name of the Author : ");
+        scanf("%s",s[i].author);
+        fflush(stdin);
+        printf("Number of pages : ");
+        scanf("%d",&s[i].pages);
+        printf("Price : ");
+        scanf("%f",&s[i].price);
+        printf("Date of publication : ");
+        scanf("%s",s[i].yr_of_publication);
+        fflush(stdin);
+    }
+    printf("\n******************************************************");
+    if(s[0].price>s[1].price && s[0].price>s[2].price)
+    {
+        printf("\n\tBook details with the highest price\n");
+        printf("\n\t Book 1\nTitle of the book : %s\n",s[0].book_title);
+        printf("Author Name : %s\n",s[0].author);
+        printf("Number of pages : %d\n",s[0].pages);
+        printf("Price : %f\n",s[0].price);
+        printf("Date of publication : %s",s[0].yr_of_publication);
+    }
+    else if(s[1].price>s[0].price && s[1].price>s[2].price)
+    {
+        printf("\n\tBook details with the highest price\n");
+        printf("\n\t Book 2\nTitle of the book : %s\n",s[1].book_title);
+        printf("Author Name : %s\n",s[1].author);
+        printf("Number of pages : %d\n",s[1].pages);
+        printf("Price : %f\n",s[1].price);
+        printf("Date of publication : %s",s[1].yr_of_publication);
+    }
+    else
+    {
+        printf("\n\tBook details with the highest price\n");
+        printf("\n\t Book 3\nTitle of the book : %s\n",s[2].book_title);
+        printf("Author Name : %s\n",s[2].author);
+        printf("Number of pages : %d\n",s[2].pages);
+        printf("Price : %f\n",s[2].price);
+        printf("Date of publication : %s",s[2].yr_of_publication);
+    }
+ return 0;
+}
