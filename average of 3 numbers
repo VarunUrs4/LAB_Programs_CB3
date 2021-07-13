@@ -1,0 +1,25 @@
+ //Average of three numbers using functions
+
+#include<stdio.h>
+int average(int a , int b, int c);
+
+int main()
+{
+    int a ,b ,c ;
+    float avg;
+    printf("\n Enter the first number : ");
+    scanf("%d",&a);
+    printf("\n Enter the second number : ");
+    scanf("%d",&b);
+    printf("\n Enter the third number : ");
+    scanf("%d",&c);
+    avg = average(a,b,c);
+    return 0;
+}
+int average(int a, int b, int c)
+{
+    float s;
+    s = (a+b+c) /3.0;
+    printf("\n Average of three numbers = %f", s);
+    return s;
+}
