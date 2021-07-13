@@ -1,0 +1,40 @@
+/*Demonstrate how to read data from the keyboard, write it to a file called BMSCE, 
+again read the same data from the BMSCE file, and display it on the screen/console.*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char text[100];
+    char ch;
+    int i;
+    printf("***********Writing data to file***********\n");
+    printf("\nEnter a string : ");
+    gets(text);
+    FILE *fp;
+    fp = fopen("C:/Users/Preethi URS/Desktop/BMSCE","w");
+    if(fp == NULL)
+    {
+        printf("Unable to create file.\n");
+        exit(0);
+    }
+    fputs(text,fp);
+    fclose(fp);
+    printf("\n********Reading Data From File*********\n");
+    printf("\nData Read From The File : ");
+    fp = fopen("C:/Users/Preethi URS/Desktop/BMSCE","r");
+    if (fp == NULL)
+    {
+        printf( "BMSCE.txt file failed to open." ) ;
+        exit(0);
+    }
+    do
+    {
+        ch = fgetc(fp);
+        putchar(ch);
+    }while(ch != EOF);
+    printf("\n");
+    fclose(fp);
+    return 0;
+}
